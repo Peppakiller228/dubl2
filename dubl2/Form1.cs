@@ -13,29 +13,29 @@ namespace dubl2
             InitializeComponent();
 
             pobedi = 0;
-            proig = 0;
+            proig = 0; // Глобальные данные( счётчик побед и поражений)
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             SoundPlayer simpleSound = new SoundPlayer(@"C:\Users\User\Downloads\win.wav");
-            simpleSound.Play();
+            simpleSound.Play(); // Звук победы кнопочка ( в правилах)
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             SoundPlayer simpleSound1 = new SoundPlayer(@"C:\Users\User\Downloads\lose.wav");
-            simpleSound1.Play();
+            simpleSound1.Play(); // Звук поражения кнопка( в правилах)
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectTab(tabPage3);
+            tabControl1.SelectTab(tabPage3); // В главном меню кнопка направляющия куда-то
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectTab(tabPage2);
+            tabControl1.SelectTab(tabPage2); // В главном меню кнопка направляющия куда-то
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
@@ -44,66 +44,66 @@ namespace dubl2
 
         private void button6_Click(object sender, EventArgs e)
         {
-            int a, b;
+            int a, b; // Цветовая Лотерея ( а число красных , b число зеленых)
             Random rn = new Random();
             a = rn.Next(1, 10);
             b = 0;
-            if (a < 5)
+            if (a < 5) // рандомайзер ( если чило меньше 5 оно становится красным( по правилам 3 красных луз)
             {
-                button8.BackColor = Color.Red;
+                button8.BackColor = Color.Red; 
             }
-            else
+            else  // рандомайзер ( если чило больше  5 оно становится зеленым( по правилам 3 зеленых вин)
             {
                 button8.BackColor = Color.Green;
                 b = b + 1;
             }
             a = rn.Next(1, 10);
-            if (a < 5)
+            if (a < 5) // рандомайзер ( если чило меньше 5 оно становится красным( по правилам 3 красных луз)
             {
                 button9.BackColor = Color.Red;
             }
-            else
+            else // рандомайзер ( если чило больше  5 оно становится зеленым( по правилам 3 зеленых вин)
             {
                 button9.BackColor = Color.Green;
                 b = b + 1;
             }
             a = rn.Next(1, 10);
-            if (a < 5)
+            if (a < 5) // рандомайзер ( если чило меньше 5 оно становится красным( по правилам 3 красных луз)
             {
                 button10.BackColor = Color.Red;
             }
-            else
+            else // рандомайзер ( если чило больше  5 оно становится зеленым( по правилам 3 зеленых вин)
             {
                 button10.BackColor = Color.Green;
                 b = b + 1;
             }
             a = rn.Next(1, 10);
-            if (a < 5)
+            if (a < 5) // рандомайзер ( если чило меньше 5 оно становится красным( по правилам 3 красных луз)
             {
                 button11.BackColor = Color.Red;
             }
-            else
+            else // рандомайзер ( если чило больше  5 оно становится зеленым( по правилам 3 зеленых вин)
             {
                 button11.BackColor = Color.Green;
                 b = b + 1;
             }
-            a = rn.Next(1, 10);
+            a = rn.Next(1, 10); // рандомайзер ( если чило меньше 5 оно становится красным( по правилам 3 красных луз)
             if (a < 5)
             {
                 button12.BackColor = Color.Red;
             }
-            else
+            else // рандомайзер ( если чило больше  5 оно становится зеленым( по правилам 3 зеленых вин)
             {
                 button12.BackColor = Color.Green;
                 b = b + 1;
             }
-            if (b >= 3)
+            if (b >= 3) // Если зеленых больше 3 то победа
             {
                 SoundPlayer simpleSound = new SoundPlayer(@"C:\Users\User\Downloads\win.wav");
                 simpleSound.Play();
                 pobedi += 1;
             }
-            else
+            else  // это если меньше луз
             {
                 SoundPlayer simpleSound1 = new SoundPlayer(@"C:\Users\User\Downloads\lose.wav");
                 simpleSound1.Play();
@@ -116,16 +116,16 @@ namespace dubl2
 
         }
 
-        private void button14_Click(object sender, EventArgs e)
+        private void button14_Click(object sender, EventArgs e) // Числовая лотерея
         {
-            int k, j, take, take1, govno;
+            int k, j, take, take1, govno; // к это переменная для рандомайзера, j счетчик похожих числе, take берет число с ComboBox, тэйк1 берет с текстбокса, говно 
             take1 = 0;
             Random rn = new Random();
             j = 0;
             if (checkBox1.Checked == true)
             {
                 take1 = Convert.ToInt32(textBox11.Text);
-                if (take1 <= 0)
+                if (take1 <= 0) 
                 {
                     MessageBox.Show("nado vibrat, and nezya - chisli i 0");
                 }
@@ -173,15 +173,15 @@ namespace dubl2
                     }
                     if (textBox1.Text == textBox6.Text)
                     {
-                        j = j + 1; // ��� ����� ���������� ���������, �� ������ ����� � �� ����
+                        j = j + 1; // Это все счетчики схожих чисел
                     }
-                    if (j == 3 || j>3)
+                    if (j == 3 || j>3) // если вин
                     {
                         SoundPlayer simpleSound = new SoundPlayer(@"C:\Users\User\Downloads\win.wav");
                         simpleSound.Play();
                         pobedi += 1;
                     }
-                    else
+                    else // если луз
                     {
                         SoundPlayer simpleSound1 = new SoundPlayer(@"");
                         simpleSound1.Play();
@@ -241,15 +241,15 @@ namespace dubl2
                     }
                     if (textBox1.Text == textBox6.Text)
                     {
-                        j = j + 1; // ��� ����� ���������� ���������, �� ������ ����� � �� ����
+                        j = j + 1; // Это все счетчики схожих чисел
                     }
-                    if (j >= 3)
+                    if (j >= 3) // если вин
                     {
                         SoundPlayer simpleSound = new SoundPlayer(@"C:\Users\User\Downloads\win.wav");
                         simpleSound.Play();
                         pobedi += 1;
                     }
-                    else
+                    else // если луз
                     {
                         SoundPlayer simpleSound1 = new SoundPlayer(@"C:\Users\User\Downloads\lose.wav");
                         simpleSound1.Play();
@@ -285,57 +285,57 @@ namespace dubl2
 
         }
 
-        private void button15_Click(object sender, EventArgs e)
+        private void button15_Click(object sender, EventArgs e) // это Счетчик
         {
-            button15.Text = "��������";
-            int klvo, wr, pdz;
-            if( checkBox2.Checked == true)
+            button15.Text = "Îáíîâèòü";
+            int klvo, wr, pdz; // для математических вычеслений
+            if( checkBox2.Checked == true) //  берет с коробочки где надо галочку поставить
             {
-                label6.Text = "������ " + pobedi;
+                label6.Text = "Ïîáåäû " + pobedi;  // выйгранные показывает
             }
-            if ( checkBox3.Checked == true)
+            if ( checkBox3.Checked == true) //  берет с коробочки где надо галочку поставить
             {
 
-                label7.Text = "��������� " + proig;
+                label7.Text = "Ïîðàæåíèÿ " + proig; // проигранные игры показывает
             }
-            if ( checkBox4.Checked == true)
+            if ( checkBox4.Checked == true) //  берет с коробочки где надо галочку поставить
             {
-                klvo = pobedi + proig;
-                label8.Text = "���-�� ��� " + klvo;
+                klvo = pobedi + proig; // Счетчик обшего кол-во игр
+                label8.Text = "Êîë-âî èãð " + klvo;
             }
-            if ( checkBox5.Checked == true)
+            if ( checkBox5.Checked == true) //  берет с коробочки где надо галочку поставить
             {
-                wr = pobedi + proig;
+                wr = pobedi + proig; 
                 wr = 100 / wr;
-                wr = wr * pobedi; // wr = 100 / (pobedi + proig) * pobedi
-                label9.Text = "������� " + wr;
-                progressBar1.Visible = true;
-                progressBar1.Maximum = 100;
-                progressBar1.Minimum = 1;
-                progressBar1.Value = wr;
+                wr = wr * pobedi; // wr = 100 / (pobedi + proig) * pobedi Счетчик Винрейта
+                label9.Text = "Âèíðåéò " + wr; 
+                progressBar1.Visible = true; // это такая полосочка которая заполняется (ProgressBar) Собственно изученный материал.
+                progressBar1.Maximum = 100; // Макс значение
+                progressBar1.Minimum = 1; // Мин значение 
+                progressBar1.Value = wr; //и вообще его значение( Насколько оно заполнится) 
             }
             if ( checkBox6.Checked == true)
             {
-                pdz = proig - pobedi;
+                pdz = proig - pobedi; // Сколько ударов по затылку получишь( по правилам проиграл удар по затыльнику, но если отыгрался то не получаешь его( в этом и азарт))
                 if (pdz <= 0)
                 {
-                    label10.Text = "�� �� � ������� 0 �������������";
+                    label10.Text = "íó òû è âåçó÷èé 0 ïîäçàòûëíèêîâ"; 
                 }
                 else
                 {
-                    label10.Text = "���-�� ������������� " + pdz;
+                    label10.Text = "Êîë-âî ïîäçàòûëíèêîâ " + pdz;
                 }
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectTab(tabPage5);
+            tabControl1.SelectTab(tabPage5); // кнопка направляющия куда-то
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectTab(tabPage4);
+            tabControl1.SelectTab(tabPage4); // кнопка направляющия куда-то
         }
 
         private void label9_Click(object sender, EventArgs e)
@@ -345,12 +345,12 @@ namespace dubl2
 
         private void button17_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectTab(tabPage4);
+            tabControl1.SelectTab(tabPage4); // кнопка направляющия куда-то
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectTab(tabPage3);
+            tabControl1.SelectTab(tabPage3); // кнопка направляющия куда-то
 
         }
 
