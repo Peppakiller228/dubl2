@@ -122,10 +122,10 @@ namespace dubl2
             take1 = 0;
             Random rn = new Random();
             j = 0;
-            if (checkBox1.Checked == true)
+            if (checkBox1.Checked == true) 
             {
-                take1 = Convert.ToInt32(textBox11.Text);
-                if (take1 <= 0) 
+                take1 = Convert.ToInt32(textBox11.Text);  
+                if (take1 <= 0)  // Если число 0 или меньше его( такое незя выбирать)
                 {
                     MessageBox.Show("nado vibrat, and nezya - chisli i 0");
                 }
@@ -134,7 +134,7 @@ namespace dubl2
                     take1 += 1;
                     j = 0;
                     k = rn.Next(0, take1);
-                    textBox1.Text = k.ToString();
+                    textBox1.Text = k.ToString(); // Рандомайзер дает число случайное для к и помещает его в текстбокс( на картинку и позже будет считывать кол-во совпадений
                     k = rn.Next(0, take1);
                     textBox2.Text = k.ToString();
                     k = rn.Next(0, take1);
@@ -201,7 +201,7 @@ namespace dubl2
                 }
                 else
                 {
-                    k = rn.Next(0, take);
+                    k = rn.Next(0, take); // Рандомайзер дает число случайное для к и помещает его в текстбокс( на картинку и позже будет считывать кол-во совпадений
                     textBox1.Text = k.ToString();
                     k = rn.Next(0, take);
                     textBox2.Text = k.ToString();
